@@ -1,67 +1,55 @@
-<html>
-	<head>
-		<title>Create your own institute | ScienceHostel - a community for scientists and institute hosts</title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script type="tex/javascript">
+{% extends "base.html" %}
+
+{% block body %}
+
+<header>
+	<div class="header">
+		<h1><a href="/">ScienceHostel</a></h1>			
+		<a id="login" href="/login">Login</a>
+		<ul id="nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/institutes">Institutes</a></li>
+			<li><a href="/scientists">Scientists</a></li>
+			<li><a href="/faq">FAQ</a></li>
+		</ul>
 		
-		</script>
-	</head>
-	<body>
-		<header>
-			<div class="header">
-				<h1><a href="index.html">ScienceHostel</a></h1>			
-				<a id="login" href="login.html">Login</a>
-				<ul id="nav">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="institutes.html">Institutes</a></li>
-					<li><a href="scientists.html">Scientists</a></li>
-					<li><a href="faq.html">FAQ</a></li>
-				</ul>
-				
-				<div class="hide">.</div>
-			</div>
-		</header>
-		<section>
-			<h3>Want to create your own institute?</h3>
+		<div class="hide">.</div>
+	</div>
+</header>
+<section>
+	<h3>Want to create your own institute?</h3>
+	
+	<div class="wrapper">
+		<p>Please fill out the following form to send a request to create your institute.<p>
+		
+		<p>Note: Your information will not be shared, but will be sent to a
+		ScienceHostel administrator. </p>
+		
+		<form id="addInstitutes" method="post">
+			<label id="iname">Institute name</label>
+			<input type="text" for="iname">
+
+			<label id="bdescr">Brief description</label>
+			<input type="text" for="bdescr">
+
+			<label id="iaddr">Institute address</label>
+			<input type="text" for="iaddr">
+
+			<label id="yname">Your name</label>
+			<input type="text" for="yname">
+
+			<label id="yemail">Your email</label>
+			<input type="text" for="yemail">
 			
-			<div class="wrapper">
-				<p>Please fill out the following form to send a request to create your institute.<p>
-				
-				<p>Note: Your information will not be shared, but will be sent to a
-				ScienceHostel administrator. </p>
-				
-				<form id="addInstitutes" method="post">
-					<label id="iname">Institute name</label>
-					<input type="text" for="iname">
-
-					<label id="bdescr">Brief description</label>
-					<input type="text" for="bdescr">
-
-					<label id="iaddr">Institute address</label>
-					<input type="text" for="iaddr">
-
-					<label id="yname">Your name</label>
-					<input type="text" for="yname">
-
-					<label id="yemail">Your email</label>
-					<input type="text" for="yemail">
-					
-					<input type="submit" value="Send request">
-				</form>
-				
-				<p>If your institute is approved, you will
-				be personally contacted and asked to provide more information. Your
-				institute will then be added to our list, and, only with your
-				approval, scientists may begin visiting.
-				</p>
-			</div><!--end of wrapper div-->
-		</section>
+			<input type="submit" value="Send request">
+		</form>
 		
-		<footer>
-			<div class="footer">
-				&#169;ScienceHostel
-			</div>
-		</footer>
-	</body>
-</html>
+		<p>If your institute is approved, you will
+		be personally contacted and asked to provide more information. Your
+		institute will then be added to our list, and, only with your
+		approval, scientists may begin visiting.
+		</p>
+	</div><!--end of wrapper div-->
+</section>
+
+{% end %}

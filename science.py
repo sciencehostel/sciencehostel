@@ -25,6 +25,9 @@ class Application(tornado.web.Application):
             (r"/login", LoginHandler),
             (r"/institutes", InstitutesHandler),
             (r"/scientists", ScientistsHandler),
+            (r"/addInstitutes", AddInstitutesHandler),
+            (r"/joining", JoiningHandler),
+            (r"/forgotpwd", ForgotPwdHandler),
             (r"/faq", FaqHandler),
         ]
         settings = dict(
@@ -55,15 +58,30 @@ class InstitutesHandler(tornado.web.RequestHandler):
   def get(self):
     self.render('institutes.html')
 
+class AddInstitutesHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('addInstitutes.html')
+
 class ScientistsHandler(tornado.web.RequestHandler):
 
   def get(self):
     self.render('scientists.html')
 
+class JoiningHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('joining.html')
+
 class FaqHandler(tornado.web.RequestHandler):
 
   def get(self):
     self.render('faq.html')
+
+class ForgotPwdHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('forgotpwd.html')
 
 def main():
     tornado.options.parse_command_line()
