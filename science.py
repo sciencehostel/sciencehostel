@@ -72,7 +72,8 @@ class AddInstitutesHandler(BaseHandler):
 class ScientistsHandler(BaseHandler):
 
   def get(self):
-    self.render('scientists.html')
+    scientists = self.db.query('SELECT * from scientist')
+    self.render('scientists.html', scientists=scientists)
 
 class JoiningHandler(BaseHandler):
 

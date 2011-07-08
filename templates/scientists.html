@@ -22,29 +22,16 @@
 	<a class="action-links" href="/joining">Joining</a>
 	
 	<ul class="wrapper">
+    {% for scientist in scientists %}
 		<li>
-			<h5>Scientist name1</h5>
+			<h5>{{scientist.name}}</h5>
       <img src="{{static_url("images/dummy.jpg")}}"></img>
 			<div>
-				<p>Description 1 begins with Lorem Ipsum is simply dummy text of the 
-				printing and typesetting industry. Lorem Ipsum has been the industry's 
-				standard dummy text ever since the 1500s, when an unknown printer took a 
-				galley of type and scrambled it to make a type specimen book.</p>
+				<p>{{scientist.publicbio}}</p>
 			</div>
 		</li>
 		<div class="hide clear">.</div>
-		
-		<li>
-			<h5>Scientist name2</h5>
-      <img src="{{static_url("images/dummy.jpg")}}"></img>
-			<div>
-				<p>Description 1 begins with Lorem Ipsum is simply dummy text of the 
-				printing and typesetting industry. Lorem Ipsum has been the industry's 
-				standard dummy text ever since the 1500s, when an unknown printer took a 
-				galley of type and scrambled it to make a type specimen book.</p>
-			</div>
-		</li>
-		<div class="hide clear">.</div>
+    {% end %}
 		
 	</ul><!--end of wrapper ul-->
 	<div class="hide">.</div>
