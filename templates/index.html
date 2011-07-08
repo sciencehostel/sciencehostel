@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<header>
+	<div class="header">
+		<h1><a href="/">ScienceHostel</a></h1>			
+		<a id="login" href="/login">Login</a>
+		<ul id="nav">
+			<li class="current">Home</li>
+			<li><a href="/institutes">Institutes</a></li>
+			<li><a href="/scientists">Scientists</a></li>
+			<li><a href="/faq">FAQ</a></li>
+		</ul>
+		
+		<div class="hide">.</div>
+	</div>
+</header>
+
+<section>
+	<h2>A community for scientists and institute hosts</h2>
+	<img src="{{static_url("images/sciencehostel.png")}}">
+	<div id="above-fold"> 				
+		<div>
+			<h4>What is ScienceHostel?</h4>
+			<p>The physical requirements for conducting scholarly research have changed dramatically 
+			with the rise of the internet. It is now viable for researchers with laptop computers to 
+			work autonomously – with access to current articles and communication channels on par 
+			with the resources available at large universities. These new circumstances motivate the 
+			creation of a new kind of research enterprise: a Science Hostel.</p>
+			<p>By providing places to live and work with other researchers, in beautiful locations, 
+			a Science Hostel could increase creative productivity and overall quality of life for 
+			scholars in the internet age.</p>
+		</div>
+	</div>
+</section>
+
+{% end %}

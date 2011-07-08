@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<header>
+	<div class="header">
+		<h1><a href="/">ScienceHostel</a></h1>			
+		<a id="login" href="/login">Login</a>
+		<ul id="nav">
+			<li><a href="/">Home</a></li>
+			<li class="current">Institutes</li>
+			<li><a href="/scientists">Scientists</a></li>
+			<li><a href="/faq">FAQ</a></li>
+		</ul>
+		
+		<div class="hide">.</div>
+	</div>
+</header>
+		
+<section>
+	<h3>Institutes</h3>
+	<a class="action-links" href="addInstitutes.html">Want to create your own institute?</a>
+	
+	<ul class="wrapper">
+		<li>
+			<h5>Institute name1</h5>
+			<img src="{{static_url("images/dummy.jpg")}}"></img>
+			<div>
+				located in <em>place1</em>
+				<p>Description 1 begins with Lorem Ipsum is simply dummy text of the 
+				printing and typesetting industry. Lorem Ipsum has been the industry's 
+				standard dummy text ever since the 1500s, when an unknown printer took a 
+				galley of type and scrambled it to make a type specimen book.</p>
+			</div>
+		</li>
+		<div class="hide clear">.</div>
+		
+		<li>
+			<h5>Institute name2</h5>
+			<img src="{{static_url("images/dummy.jpg")}}"></img>
+			<div>
+				located in <em>place2</em>
+				<p>Description 1 begins with Lorem Ipsum is simply dummy text of the 
+				printing and typesetting industry. Lorem Ipsum has been the industry's 
+				standard dummy text ever since the 1500s, when an unknown printer took a 
+				galley of type and scrambled it to make a type specimen book.</p>
+			</div>
+		</li>
+		<div class="hide clear">.</div>
+
+	</ul><!--end of list-wrapper div-->
+	<div class="hide">.</div>
+</section>
+
+{% end %}

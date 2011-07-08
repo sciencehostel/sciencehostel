@@ -22,6 +22,10 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/", MainHandler),
+            (r"/login", LoginHandler),
+            (r"/institutes", InstitutesHandler),
+            (r"/scientists", ScientistsHandler),
+            (r"/faq", FaqHandler),
         ]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
@@ -39,7 +43,27 @@ class Application(tornado.web.Application):
 class MainHandler(tornado.web.RequestHandler):
 
   def get(self):
-    self.write('yo')
+    self.render('index.html')
+
+class LoginHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('login.html')
+
+class InstitutesHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('institutes.html')
+
+class ScientistsHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('scientists.html')
+
+class FaqHandler(tornado.web.RequestHandler):
+
+  def get(self):
+    self.render('faq.html')
 
 def main():
     tornado.options.parse_command_line()

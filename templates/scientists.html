@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<header>
+	<div class="header">
+		<h1><a href="/">ScienceHostel</a></h1>			
+		<a id="login" href="/login">Login</a>
+		<ul id="nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/institutes">Institutes</a></li>
+			<li class="current">Scientists</li>
+			<li><a href="/faq">FAQ</a></li>
+		</ul>
+		
+		<div class="hide">.</div>
+	</div>
+</header>
+
+<section>
+	<h3>Scientists</h3>
+	<a class="action-links" href="joining.html">Joining</a>
+	
+	<ul class="wrapper">
+		<li>
+			<h5>Scientist name1</h5>
+      <img src="{{static_url("images/dummy.jpg")}}"></img>
+			<div>
+				<p>Description 1 begins with Lorem Ipsum is simply dummy text of the 
+				printing and typesetting industry. Lorem Ipsum has been the industry's 
+				standard dummy text ever since the 1500s, when an unknown printer took a 
+				galley of type and scrambled it to make a type specimen book.</p>
+			</div>
+		</li>
+		<div class="hide clear">.</div>
+		
+		<li>
+			<h5>Scientist name2</h5>
+      <img src="{{static_url("images/dummy.jpg")}}"></img>
+			<div>
+				<p>Description 1 begins with Lorem Ipsum is simply dummy text of the 
+				printing and typesetting industry. Lorem Ipsum has been the industry's 
+				standard dummy text ever since the 1500s, when an unknown printer took a 
+				galley of type and scrambled it to make a type specimen book.</p>
+			</div>
+		</li>
+		<div class="hide clear">.</div>
+		
+	</ul><!--end of wrapper ul-->
+	<div class="hide">.</div>
+
+{% end %}

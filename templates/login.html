@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<section id="lgn">
+	<img src="{{static_url("images/scientist1.png")}}">
+	<h1><a href="/">ScienceHostel</a></h1>						
+	<div id="login-wrapper">
+		<form id="login-form" method="post" action="">
+			<label id="login-email">Email</label>
+			<input type="text" for="login-email">
+			
+			<label id="password">Password
+			<a href="forgot-pwd.html"><em>Forgot password</em></a>
+			</label>
+			<input type="text" for="password">
+			
+			<input type="submit" value="Login">
+		</form>				
+	</div><!--end of login-wrapper div-->
+</section>
+
+{% end %}
