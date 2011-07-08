@@ -1,0 +1,365 @@
+/*
+SciencheHostel 
+Style for member pages
+Author: Prajakta Godbole
+Date: 21 June 2011
+*/
+
+/*****************************************************
+		Reset styles 
+******************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+/*
+	vertical-align: baseline;
+*/
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************************************
+		Layout
+*******************************************************/
+html, footer {
+	width: 100%;
+}
+
+body {
+	width:100%;	
+	font-family: 'Helvetica Neue', 'Georgia', 'Baskerville', 'Times',serif;
+	font-weight: 300;
+	line-height: 1.5em;	
+	color: #450200;
+	font-size: 1em;
+}
+
+.header, section, .footer {
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px 20px;
+}
+
+a {
+	text-decoration:none;	
+}
+
+table {
+	font-size: 0.8em;
+}
+
+/******************************************************
+		Navigation
+*******************************************************/
+h1 {
+	float:left;
+}
+
+#nav {
+	float:right;
+}
+
+#nav li {
+	display:inline;
+	list-style-type:none;
+	margin:0 15px;
+	padding:0 10px;
+}
+
+#member-nav-links {
+	float:right;
+	padding-left:100px;
+}
+
+.hide {
+	visibility:hidden;
+}
+
+.clear {
+	clear: both;
+}
+
+.current {
+	border-radius: 5px;
+}
+
+footer {
+	clear: both;
+	background-color: #999;
+	height: 100px;
+	color: #fff;
+}
+
+/******************************************************
+		Headers
+*******************************************************/
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.6em;
+	margin: 20px 0;
+}
+
+h3 {
+	font-size: 1.2em;
+	margin: 20px 0;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+h5 {
+	font-size: 1.1em;
+}
+
+/******************************************************
+		Colors
+*******************************************************/
+html,.current {
+	background-color:#13A7BF; 
+}
+
+/* White text */ 
+.current {
+	color: #fff;
+}
+
+header, #faq-index {
+	background-color: #333;
+}
+
+a {
+	color: #13A7BF;
+}	
+
+#nav a {
+	color: #666;
+}
+
+.wrapper {
+	background-color: #fff;
+	opacity: 0.8;
+}
+
+/* member page nav username display */
+#member-nav-links span {
+	color: #13A7BF;
+}
+
+#secondary-nav {
+	background-color: #63D3E5;
+	color: #fff;
+}
+
+#secondary-nav button {
+	background-color: #05A7C1;
+	color: #fff;
+}
+
+ul#sec-nav-links li a{
+	color: #fff;
+}
+
+ul#sec-nav-links li {
+	border-bottom: 1px solid #fff;
+}
+
+#dashboard-content {
+	color: #333;
+}
+
+.current-visits {
+	background-color: #ACDAE2;
+}
+
+.upcoming-visits p, .pending-visits p, .denied-visits p, .past-visits p{
+	background-color: #ACDAE2;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+table.upcoming-list, table.pending-list, table.denied-list, table.past-list {
+	background-color: #ACDAE2;
+}
+
+table.upcoming-list th, table.pending-list th, table.denied-list th, table.past-list th {
+	background-color: #ACDAE2;
+}
+
+table.upcoming-list td, table.pending-list td, table.denied-list td, table.past-list td {
+	background-color: #DCF5F9;
+}
+
+table.upcoming-list td button, table.pending-list td button, table.denied-list td button, table.past-list td button {
+	background-color: #05A7C1;
+}
+
+/******************************************************
+		Main page - track visits
+*******************************************************/
+
+#member-nav-links span, #member-nav-links a {
+	margin:0 7px;
+}
+
+#member-nav-links img {
+	width: 16px;
+}
+
+.wrapper {
+	margin: 20px 0;
+	border-radius: 10px;
+}
+
+#secondary-nav {
+	float: left;
+	width: 200px;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+div#secondary-nav button{
+	font-size: 1.1em;
+	padding: 5px;
+	margin: 5px 0;
+	border-radius: 10px;
+	width: 200px;
+}
+
+ul#sec-nav-links li {
+	font-size: 1.1em;
+	margin: 10px 0;
+}
+
+#dashboard-content {
+	margin-left: 240px; /* width of the side panel + some margin */
+	padding: 20px;
+}
+
+.current-visits {
+	border-radius: 7px;
+	padding: 10px;
+	margin: 5px 0;
+}
+
+.current-dates {
+	float: left;
+	font-size: 0.8em;
+}
+
+.current-details {
+	margin-left: 120px;
+	width: 60%;
+}
+
+.current-list img {
+	float: right;
+	width: 30px;
+}
+
+/******************************************************
+		Tables in Track visits page
+*******************************************************/
+
+table.upcoming-list, table.pending-list, table.denied-list, table.past-list {
+	border-width: 0px;
+	border-spacing: 0px;
+	border-style: hidden;
+	border-collapse: collapse;
+	width: 100%;
+	margin: 20px 0;
+}
+
+table.upcoming-list th, table.pending-list th, table.denied-list th, table.past-list th {
+	padding: 7px;
+}
+
+table.upcoming-list tr, table.pending-list tr, table.denied-list tr, table.past-list tr {
+	border-bottom: 1px solid white;
+}
+
+table.upcoming-list td, table.pending-list td, table.denied-list td, table.past-list td {
+	border-width: 0px;
+	padding: 5px;
+	text-align: center;
+	font-size: 0.95em;
+}
+
+table.upcoming-list td img, table.pending-list td img, table.denied-list td img, table.past-list td img {
+	width: 20px;
+	margin: 5px 10px;
+	float: right;
+}
+
+table.upcoming-list td button, table.pending-list td button, table.denied-list td button, table.past-list td button {
+	float: right; 
+	margin-right: 20px;
+	font-size: 0.9em;
+	padding: 5px;
+	border-radius: 10px;
+	width: 100px;
+}
+
+/******************************************************
+		Edit profile page
+*******************************************************/
+
+#profile-details {
+	width: 400px;
+}
+
+#profile-pics img{
+	float: right;
+	width: 200px;
+	
+}

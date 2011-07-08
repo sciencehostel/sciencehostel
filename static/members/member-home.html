@@ -1,0 +1,229 @@
+<html>
+	<head>
+		<title>Track visits | ScienceHostel - a community for scientists and institute hosts</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="member-style.css">
+		<script type="tex/javascript">
+		
+		</script>
+	</head>
+	<body>
+		<header>
+			<div class="header">
+				<h1><a href="index.html">ScienceHostel</a></h1>	
+				<div id="member-nav-links">
+					<span>user1</span> <!--username goes here -->
+					<a href="settings.html"><img src="images/settings.png"></a>
+					<a id="logout" href="logout.html">Logout</a>
+				</div>
+				<ul id="nav">
+					<li class="current">Home</li>
+					<li><a href="m-institutes.html">Institutes</a></li>
+					<li><a href="m-scientists.html">Scientists</a></li>
+					<li><a href="m-faq.html">FAQ</a></li>
+				</ul>
+				
+				<div class="hide">.</div>
+			</div>
+		</header>
+		
+		<section>
+			<div class="wrapper">
+				<div id="secondary-nav">
+					<button>Plan a visit</button>
+					<button>Want to create an institute?</button>
+					<ul id="sec-nav-links">
+						<li class="current">Track visits</li>
+						<li><a href="member-profile.html">Edit profile</a></li>
+						<li><a href="history.html">View history</a></li>
+					</ul>
+				</div><!--end of secondary-nav div-->	
+				
+				<div id="dashboard-content">
+					<h2>Visits</h2>
+					
+					<h3>Currently going on</h3>
+					
+					<div class="current-visits">
+						<p>There are no current visits for you.</p>
+					</div>
+					<!--or-->
+					<div class="current-visits">
+						<ul class="current-list">
+							<li>
+								<span class="current-dates">27 June - 2 July</span>
+								<img src="images/view-icon.png">
+								<div class="current-details">
+									<a href="institute-detail-page"><span class="institute-name">Institute name</span></a>
+									<div class="host-info">
+										<span>Host name</span>
+										<span class="email">Host email</span>
+									</div>
+								</div>
+							</li>
+							
+							<li>
+								<span class="current-dates">28 June</span>
+								<img src="images/view-icon.png">
+								<div class="current-details">
+									<a href="institute-detail-page"><span class="institute-name">Institute name</span></a>
+									<div class="host-info">
+										<span>Host name</span>
+										<span class="email">Host email</span>
+									</div>
+								</div>
+							</li>							
+						</ul>
+					</div><!-- end of current-visits div -->
+					
+					<h3>Upcoming scheduled visits</h3>
+
+					<div class="upcoming-visits">
+						<p>There are no upcoming visits for you.</p>
+					</div>
+					<!--or-->
+					<div class="upcoming-visits">
+						<table class="upcoming-list">
+						   	<!-- Table header -->  
+					    	<thead>  
+            					<tr>  
+                					<th scope="col" id="th-dates">Dates</th>  
+                					<th scope="col" id="th-institute">Institutes</th>  
+                					<th scope="col" id="th-hostinfo">Host name/ email</th>  
+                					<th scope="col" id="th-action">Action</th>  
+                  		      	</tr>  
+        					</thead>  
+   					        <tbody>  
+            					<tr>  
+                					<td><span id="from">13 July</span> - <span id="to">2 Aug</span></td>  
+                					<td>Institute1 - agsvshh djsjdjs </td>  
+                					<td>host name/ email1 - host@email.com</td>  
+	              					<td><button>Cancel visit</button><img src="images/view-icon.png"></td>  
+
+					            </tr>  
+            					<tr>  
+                					<td>dates2</td>  
+                					<td>Institute2</td>  
+                					<td>host name/ email2</td>  
+	              					<td><button>Cancel visit</button><img src="images/view-icon.png"></td>  
+					            </tr>
+					        </tbody>    
+						</table>		
+					</div><!-- end of upcoming-visits div -->
+
+					<h3>Pending visit requests</h3>
+
+					<div class="pending-visits">
+						<p>There are no pending visits for you.</p>
+					</div>
+					<!--or-->
+					<div class="pending-visits">
+						<table class="pending-list">
+						   	<!-- Table header -->  
+					    	<thead>  
+            					<tr>  
+                					<th scope="col" id="th-dates">Dates</th>  
+                					<th scope="col" id="th-institute">Institutes</th>  
+                					<th scope="col" id="th-hostinfo">Host name/ email</th>  
+                					<th scope="col" id="th-action">Action</th>  
+                  		      	</tr>  
+        					</thead>  
+   					        <tbody>  
+            					<tr>  
+                					<td><span id="from">12 July</span> - <span id="to">22 July</span></td>  
+                					<td>Institute1 - agsvshh djsjdjs </td>  
+                					<td>host name/ email1 - host@email.com</td>  
+	              					<td><button>Cancel visit</button><img src="images/view-icon.png"></td>  
+
+					            </tr>  
+            					<tr>  
+                					<td>dates2</td>  
+                					<td>Institute2</td>  
+                					<td>host name/ email2</td>  
+	              					<td><button>Cancel visit</button><img src="images/view-icon.png"></td>  
+					            </tr>
+					        </tbody>    
+						</table>		
+					</div><!-- end of pending-visits div -->
+					
+					<h3>Denied visit requests</h3>
+
+					<div class="denied-visits">
+						<p>There are no denied visits for you.</p>
+					</div>
+					<!--or-->
+					<div class="denied-visits">
+						<table class="denied-list">
+						   	<!-- Table header -->  
+					    	<thead>  
+            					<tr>  
+                					<th scope="col" id="th-dates">Dates</th>  
+                					<th scope="col" id="th-institute">Institutes</th>  
+                					<th scope="col" id="th-hostinfo">Host name/ email</th>  
+                					<th scope="col" id="th-action">Action</th>  
+                  		      	</tr>  
+        					</thead>  
+   					        <tbody>  
+            					<tr>  
+                					<td><span id="from">12 July</span> - <span id="to">22 July</span></td>  
+                					<td>Institute1 - agsvshh djsjdjs </td>  
+                					<td>host name/ email1 - host@email.com</td>  
+	              					<td><button>Dismiss</button><img src="images/view-icon.png"></td>  
+
+					            </tr>  
+            					<tr>  
+                					<td>dates2</td>  
+                					<td>Institute2</td>  
+                					<td>host name/ email2</td>  
+	              					<td><button>Dismiss</button><img src="images/view-icon.png"></td>  
+					            </tr>
+					        </tbody>    
+						</table>		
+					</div><!-- end of denied-visits div -->
+					
+					<h3>Past visits</h3>
+
+					<div class="past-visits">
+						<p>There are no past visits for you.</p>
+					</div>
+					<!--or-->
+					<div class="past-visits">
+						<table class="past-list">
+						   	<!-- Table header -->  
+					    	<thead>  
+            					<tr>  
+                					<th scope="col" id="th-dates">Dates</th>  
+                					<th scope="col" id="th-institute">Institutes</th>  
+                					<th scope="col" id="th-hostinfo">Host name/ email</th>  
+                					<th scope="col" id="th-action">Action</th>  
+                  		      	</tr>  
+        					</thead>  
+   					        <tbody>  
+            					<tr>  
+                					<td><span id="from">12 July</span> - <span id="to">22 July</span></td>  
+                					<td>Institute1 - agsvshh djsjdjs </td>  
+                					<td>host name/ email1 - host@email.com</td>  
+	              					<td><a href="">Thank</a><button>Dismiss</button></td>  
+
+					            </tr>  
+            					<tr>  
+                					<td>dates2</td>  
+                					<td>Institute2</td>  
+                					<td>host name/ email2</td>  
+	              					<td><a href="">Thank</a><button>Dismiss</button></td>  
+					            </tr>
+					        </tbody>    
+						</table>		
+					</div><!-- end of past-visits div -->					
+				</div><!-- end of dashboard-content div -->	
+				
+			</div>
+		</section>
+		
+		<footer>
+			<div class="footer">
+				&#169;ScienceHostel
+			</div>
+		</footer>
+	</body>
+</html>
