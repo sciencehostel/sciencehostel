@@ -43,42 +43,48 @@ class Application(tornado.web.Application):
             host=options.mysql_host, database=options.mysql_database,
             user=options.mysql_user, password=options.mysql_password)
 
-class MainHandler(tornado.web.RequestHandler):
+class BaseHandler(tornado.web.RequestHandler):
+    @property
+    def db(self):
+        return self.application.db
+
+class MainHandler(BaseHandler):
 
   def get(self):
     self.render('index.html')
 
-class LoginHandler(tornado.web.RequestHandler):
+class LoginHandler(BaseHandler):
 
   def get(self):
     self.render('login.html')
 
-class InstitutesHandler(tornado.web.RequestHandler):
+class InstitutesHandler(BaseHandler):
 
   def get(self):
-    self.render('institutes.html')
+    institutes = self.db.query('SELECT * from institute')
+    self.render('institutes.html', institutes=institutes)
 
-class AddInstitutesHandler(tornado.web.RequestHandler):
+class AddInstitutesHandler(BaseHandler):
 
   def get(self):
     self.render('addInstitutes.html')
 
-class ScientistsHandler(tornado.web.RequestHandler):
+class ScientistsHandler(BaseHandler):
 
   def get(self):
     self.render('scientists.html')
 
-class JoiningHandler(tornado.web.RequestHandler):
+class JoiningHandler(BaseHandler):
 
   def get(self):
     self.render('joining.html')
 
-class FaqHandler(tornado.web.RequestHandler):
+class FaqHandler(BaseHandler):
 
   def get(self):
     self.render('faq.html')
 
-class ForgotPwdHandler(tornado.web.RequestHandler):
+class ForgotPwdHandler(BaseHandler):
 
   def get(self):
     self.render('forgotpwd.html')
