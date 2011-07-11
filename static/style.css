@@ -323,7 +323,7 @@ input[type="submit"] {
 	clear:both;
 	margin-left:150px;
 	width: 6em;
-	background:#666666 url(img/button.png) no-repeat;
+	background:#666666 ;/*url(img/button.png) no-repeat;*/
 	color:#FFFFFF;
 }
 
@@ -342,7 +342,7 @@ input[type="submit"] {
 	height: 2.2em;
 	clear:both;
 	width: 10em;
-	background:#666666 url(img/button.png) no-repeat;
+	background:#666666 ;/*url(img/button.png) no-repeat;*/
 	color:#FFFFFF;
 	margin-top: 20px;
 }
@@ -392,7 +392,7 @@ div.wrapper p { /*create institute form wrapper */
 	clear: both;
 	margin-left: 170px;
 	width: 10em;
-	background: #666666 url(img/button.png) no-repeat;
+	background: #666666; /* url(img/button.png) no-repeat;*/
 	color: #FFFFFF;
 }
 
@@ -410,4 +410,12 @@ div.wrapper p { /*create institute form wrapper */
 	font-size: 0.8em;
 	margin-left: 170px;
 	margin-bottom: 20px;
+}
+
+#addInstitutesInProgress img {
+  width: 2.6em;
+  height: 2.6em;
+  margin: 0px 0px 20px 30px;
+  margin-left: 200px;
+  float: left;
 }

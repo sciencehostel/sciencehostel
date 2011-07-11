@@ -25,23 +25,24 @@
 		<p>Note: Your information will not be shared, but will be sent to a
 		ScienceHostel administrator. </p>
 		
-		<form id="addInstitutes" method="post">
-			<label id="iname">Institute name</label>
-			<input type="text" for="iname">
+		<form id="addInstitutes" action="javascript:void(0);"  onsubmit="javascript:addInstitute(); return false;" method="post">
+			<label>Institute name</label>
+			<input id="institute_name" type="text" for="iname">
 
-			<label id="bdescr">Brief description</label>
-			<input type="text" for="bdescr">
+			<label>Brief description</label>
+			<input id="institute_desc"t ype="text" for="bdescr">
 
-			<label id="iaddr">Institute address</label>
-			<input type="text" for="iaddr">
+			<label>Institute address</label>
+			<input id="institute_addr" type="text" for="iaddr">
 
-			<label id="yname">Your name</label>
-			<input type="text" for="yname">
+			<label>Your name</label>
+			<input id="institute_host_name" type="text" for="yname">
 
-			<label id="yemail">Your email</label>
-			<input type="text" for="yemail">
+			<label>Your email</label>
+			<input id="institute_host_email" type="text" for="yemail"> 
 			
-			<input type="submit" value="Send request">
+			<div id="addInstitutesInProgress" style="display:none;" > <img alt="" src="{{static_url("images/in_progress.gif")}}"/> </div>
+			<input id="addInstitutesSubmit" type="submit" value="Send request"> 
 		</form>
 		
 		<p>If your institute is approved, you will

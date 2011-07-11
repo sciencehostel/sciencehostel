@@ -8,8 +8,11 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 import unicodedata
+import logging
+import tornado.template
 
 from tornado.options import define, options
+from zmail import *
 
 define("host", default='10.112.61.66', help="run on the given host")
 define("port", default=9090, help="run on the given port", type=int)
@@ -68,6 +71,26 @@ class AddInstitutesHandler(BaseHandler):
 
   def get(self):
     self.render('addInstitutes.html')
+
+  def post(self):
+    logging.info(self.request)
+    institute_name = self.get_argument('institute_name', '')
+    institute_desc = self.get_argument('institute_desc', '')
+    institute_addr = self.get_argument('institute_addr', '')
+    institute_host_name = self.get_argument('institute_host_name', '')
+    institute_host_email = self.get_argument('institute_host_email', '')
+
+    # write to db
+    add_institute_id = self.db.execute(
+            "INSERT INTO add_institute(institute_name, institute_desc, institute_addr, institute_host_name, institute_host_email) VALUES (%s,%s,%s,%s,%s)",
+            institute_name, institute_desc, institute_addr, institute_host_name, institute_host_email)
+
+    newrequest = self.db.get('SELECT * from add_institute where id = %s', str(add_institute_id))
+
+    loader = tornado.template.Loader('templates/')
+    email_note = loader.load("add_institute_email.html").generate(newrequest=newrequest)
+    SendTo([institute_host_email], 'New Institute Request', email_note)
+    self.write('yo')
 
 class ScientistsHandler(BaseHandler):
 
