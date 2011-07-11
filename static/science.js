@@ -49,6 +49,7 @@ function approve_add_institute(request_id, approved_val) {
     },
 
     complete: function(jqXHR, textStatus) {
+      window.location.reload();
     },
   });
 }

@@ -122,7 +122,7 @@ class ApproveAddInstitutesHandler(BaseHandler):
 
 class AdminHandler(BaseHandler):
   def get(self):
-    requests = self.db.query('SELECT * from add_institute')
+    requests = self.db.query('SELECT * from add_institute where state="pending"')
     self.render('admin.html', requests=requests)
 
 class ScientistsHandler(BaseHandler):
