@@ -29,6 +29,8 @@ class Application(tornado.web.Application):
             (r"/institutes", InstitutesHandler),
             (r"/scientists", ScientistsHandler),
             (r"/addInstitutes", AddInstitutesHandler),
+            (r"/approveAddInstitutes", ApproveAddInstitutesHandler),
+            (r"/admin", AdminHandler),
             (r"/joining", JoiningHandler),
             (r"/forgotpwd", ForgotPwdHandler),
             (r"/faq", FaqHandler),
@@ -91,6 +93,37 @@ class AddInstitutesHandler(BaseHandler):
     email_note = loader.load("add_institute_email.html").generate(newrequest=newrequest)
     SendTo([institute_host_email], 'New Institute Request', email_note)
     self.write('yo')
+
+class ApproveAddInstitutesHandler(BaseHandler):
+
+  def post(self):
+    logging.info(self.request)
+    request_id = self.get_argument('request')
+    approved = self.get_argument('approved')
+
+    # update db
+    if approved == 'true':
+      state = 'approved'
+    else:
+      state = 'denied'
+    self.db.execute(
+            "UPDATE add_institute SET state=%s WHERE id=%s", state, request_id)
+
+    newrequest = self.db.get('SELECT * from add_institute where id = %s', str(request_id))
+
+    loader = tornado.template.Loader('templates/')
+    if approved == 'true':
+      email_note = loader.load("add_institute_approved_email.html").generate(newrequest=newrequest)
+    else:
+      email_note = loader.load("add_institute_denied_email.html").generate(newrequest=newrequest)
+
+    SendTo([newrequest.institute_host_email], 'New Institute Request', email_note)
+    self.write('yo')
+
+class AdminHandler(BaseHandler):
+  def get(self):
+    requests = self.db.query('SELECT * from add_institute')
+    self.render('admin.html', requests=requests)
 
 class ScientistsHandler(BaseHandler):
 

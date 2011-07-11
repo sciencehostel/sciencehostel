@@ -35,6 +35,24 @@ function addInstitute() {
 }
 
 
+function approve_add_institute(request_id, approved_val) {
+  shJQuery.ajax({
+    url: "/approveAddInstitutes",
+    type: "POST",
+    contentType: "application/x-www-form-urlencoded",
+    data: ({approved: approved_val, request: request_id}),
+
+    error: function(jqXHR, textStatus, errorThrown) {
+    },
+
+    success: function(data, textStatus, jqXHR) {
+    },
+
+    complete: function(jqXHR, textStatus) {
+    },
+  });
+}
+
 
 function show_addInstitutesSubmit() {
   var addInstitutesSubmit_div = document.getElementById('addInstitutesSubmit');
