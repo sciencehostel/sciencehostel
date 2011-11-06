@@ -70,15 +70,16 @@ table {
 *******************************************************/
 html, footer {
 	width: 100%;
-	font-size: 100%;
 }
 
 body {
 	width:100%;	
-	font-family: 'Helvetica Neue','Myriad Pro', 'sans serif';
+	font-family: 'Helvetica Neue', 'Georgia', 'Baskerville', 'Times',serif;
+	font-weight: 300;
 	line-height: 1.5em;	
 	color: #450200;
-	}
+	font-size: 1em;
+}
 
 .header, section, .footer {
 	width: 960px;
@@ -86,17 +87,8 @@ body {
 	padding: 10px 20px;
 }
 
-body > section {
-	font-size: 0.85em;
-}
-
 a {
 	text-decoration:none;	
-}
-
-header {
-	overflow: hidden;
-	padding-bottom: 10px;
 }
 
 /******************************************************
@@ -108,132 +100,108 @@ h1 {
 
 #nav {
 	float:right;
-	font-size: 0.9em;
 }
 
 #nav li {
 	display:inline;
 	list-style-type:none;
 	margin:0 15px;
-	padding:5px 10px;
+	padding:0 10px;
 }
 
 #login {
 	float:right;
 	padding-left:100px;
-	font-size: 0.75em;
+}
+
+.hide {
+	visibility:hidden;
+}
+
+.clear {
+	clear: both;
 }
 
 .current {
-	border-radius: 3px;
+	border-radius: 5px;
 }
 
 footer {
 	clear: both;
-	height: 40px;
+	background-color: #999;
+	height: 100px;
+	color: #fff;
 }
 
-span.copyright {
-	float: right;
-	color: #444;
-}
 /******************************************************
 		Headers
 *******************************************************/
-
 h1 {
+	font-size: 2em;
+}
+
+h2 {
 	font-size: 1.6em;
-	font-family: "Voltaire";
+	margin: 0.5em auto;
+	text-align: center;
 }
 
 h3 {
-	font-size: 1.4em;
-	margin-top: 20px;
+	font-size: 1.5em;
 }
 
 h4 {
 	font-size: 1.2em;
-	font-weight: 600;
-	margin-bottom: 10px;
-	font-family: "Voltaire";
 }
 
 h5 {
 	font-size: 1.1em;
-	margin-bottom: 10px;
 }
 
-footer {
-	font-size: 0.7em;
-}
 /******************************************************
 		Colors
 *******************************************************/
-html {
-	background-color: rgba(164,216,254,0.5);
+html,.current {
+	background-color:#aacfe4;
 }
 
 /* White text */ 
-.current, h3 {
-	color: black;
-	font-family: "Voltaire";
+.current, h2 {
+	color: #fff;
 }
 
 header, #faq-index {
-	background-color: #A4D8FC;
+	background-color: #333;
 }
 
 a {
-	color: #3585BC;
+	color: #aacfe4;
 }	
 
 #nav a {
 	color: #666;
-	font-family: "Voltaire";
 }
 
-.wrapper, .action-links, #login-wrapper {
+#above-fold div, .wrapper, .action-links, #login-wrapper {
 	background-color: #fff;
-}
-
-#above-fold {
-	color: #3585BC;
-}
-
-footer {
-	color: black;
-/*
-	background-color: #A4D8FC;
-	background-image: url('images/clouds.png');
-	background-repeat: x-repeat;
-	height:81px;
-*/
+	opacity: 0.8;
 }
 
 /******************************************************
 		Main page
 *******************************************************/
-#above-fold {
-	width: 340px;
-	float: right;
-	line-height: 1.5em;
-	margin-top: 60px;
-	color: #3585BC;
-	}
 
-#above-fold strong {
-	font-size: 2em;
-	line-height: 1.4em;
-	text-shadow: 0 1px 0 #fff;
-	font-family: "Voltaire";
+#above-fold {
+	width: 360px;
+	float: right;
+	font-size: 0.9em;
+	line-height: 1.6em;
+	margin-top: 20px;
 }
 
 #above-fold div {
-	margin-top: 40px;
-}
-
-#above-fold div p{
-	margin-bottom: 10px;
+	padding: 20px;
+	border-radius: 10px;
 }
 
 section img {
@@ -244,10 +212,10 @@ section img {
 /******************************************************
 		Sub-pages
 *******************************************************/
+
 .action-links {
-	margin-top: 5px;
-	padding: 5px 10px;
-	border-radius: 4px;
+	padding: 5px;
+	border-radius: 10px;
 	float: right;
 }
 
@@ -255,50 +223,20 @@ h3 {
 	float: left;
 }
 
-.wrapper{
+.wrapper {
 	clear: both;
 	border-radius: 10px;
-	padding: 10px;
-	margin-top: 60px;
-	overflow: hidden;
-	margin-bottom: 20px;
-}
-
-.form-page	{
-	margin-bottom: 20px;
-	padding: 10px 20px 20px 20px;
+	padding: 20px;
+	margin-top: 50px;
 }
 
 .wrapper img {
 	width: 150px;
-	float: left;
+	float: right;
 }
 
 .wrapper li {
 	clear: both;
-}
-
-.wrapper section {
-	width: 95%;
-}
-
- .institutes-wrapper {
- 	clear: both;
-	margin-top: 60px;
- }
-
-.institutes-wrapper img {
-	width: 150px;
-	float: right;
-}
-
-.institutes-wrapper li {
-	background-color: white;
-	padding: 10px;
-	border-radius: 7px;
-	clear: both;
-	overflow: hidden;
-	margin-bottom: 20px;
 }
 
 #faq-index {
@@ -331,6 +269,10 @@ input {
 	height: 3em;
 }
 
+input[type="submit"] {
+
+}
+
 #lgn {
 	width: 960px;
 }
@@ -338,25 +280,22 @@ input {
 #lgn img {
 	width: 400px;	
 	float: left;
-	margin-top: 160px;
+	margin-top: 100px;
 }
 
 #lgn h1{
 	margin-top: 100px;
-	margin-left: 30px;
-	font-size: 2em;
-	font-family: "Voltaire";
 }
 
 #lgn h1 a{
-	color: #3585BC;
+	color: #fff;
 }
 
 #login-wrapper {
 	float: right;
-	width: 450px;
+	width: 480px;
 	padding: 25px;
-	margin: 30px 0;
+	margin: 50px 0;
 	border-radius: 10px;
 }
 
@@ -377,46 +316,42 @@ input {
 	margin:2px 0 20px 10px;
 }
 
-#login-form input[type="submit"], #forgotPwd input[type="submit"] {
+#login-form input[type="submit"] {
 	font-size: 1.2em;
-	text-align: center;
+	text-align:center;
 	height: 2.2em;
 	clear:both;
 	margin-left:150px;
 	width: 6em;
-	background-color:#d1ebfe;
-	color:#000;
-	border-style: none;
-	font-family: "Voltaire";
-}
-
-#login-form input[type="submit"]:hover, #forgotPwd input[type="submit"]:hover {
-	background-color:#a4d8fc;	
+	background:#666666 ;/*url(img/button.png) no-repeat;*/
+	color:#FFFFFF;
 }
 
 #login-form em{
 	color:#666666;
 	display:block;
-	font-size: 0.8em;
+	font-size:11px;
 	font-weight:normal;
 	text-align:right;
 	width:140px;
 }
 
- #forgotPwd input[type="submit"] {
+#forgotPwd input[type="submit"] {
+	font-size: 1.2em;
+	text-align:center;
+	height: 2.2em;
+	clear:both;
 	width: 10em;
-	margin-left: 0;
+	background:#666666 ;/*url(img/button.png) no-repeat;*/
+	color:#FFFFFF;
 	margin-top: 20px;
-	border-style: none;
-	font-family: "Voltaire";
 }
 
 #forgotPwd em {
-	color:#1E4A63;
+	color:#666666;
 	display:block;
-	font-size: 0.8em;
+	font-size:11px;
 	font-weight:normal;
-	margin-top: 10px;
 }
 
 /******************************************************
@@ -443,12 +378,11 @@ div.wrapper p { /*create institute form wrapper */
 
 #addInstitutes input, #joining input {
 	float: left;
-	font-size: 1.1em;
-	height: 2em;
-	padding: 0 5px;
+	font-size: 12px;
+	padding: 4px 2px;
 	border: solid 1px #aacfe4;
 	width: 560px;
-	margin: 0 0 15px 30px;
+	margin: 0 0 20px 30px;
 }
 
 #addInstitutes input[type="submit"], #joining input[type="submit"] {
@@ -458,22 +392,8 @@ div.wrapper p { /*create institute form wrapper */
 	clear: both;
 	margin-left: 170px;
 	width: 10em;
-	background-color: #d1ebfe;
-	border: none;
-	color: #000;
-	font-family: "Voltaire";
-}
-
-#addInstitutes input[type="submit"]:hover, #joining input[type="submit"]:hover {
-	background-color: #a4d8fc;
-}
-
-#addInstitutesInProgress img {
-  width: 2.6em;
-  height: 2.6em;
-  margin: 0px 0px 20px 30px;
-  margin-left: 200px;
-  float: left;
+	background: #666666; /* url(img/button.png) no-repeat;*/
+	color: #FFFFFF;
 }
 
 #joining input[type="submit"] {
@@ -492,8 +412,10 @@ div.wrapper p { /*create institute form wrapper */
 	margin-bottom: 20px;
 }
 
-input[type="submit"] {
-	border-radius: 10px;
+#addInstitutesInProgress img {
+  width: 2.6em;
+  height: 2.6em;
+  margin: 0px 0px 20px 30px;
+  margin-left: 200px;
+  float: left;
 }
-
-

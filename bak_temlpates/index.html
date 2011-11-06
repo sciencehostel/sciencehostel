@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 
 {% block body %}
@@ -12,14 +13,15 @@
 			<li><a href="/scientists">Scientists</a></li>
 			<li><a href="/faq">FAQ</a></li>
 		</ul>
+		
+		<div class="hide">.</div>
 	</div>
 </header>
 
 <section>
-<img src="{{static_url("images/sciencehostel.png")}}">
+	<h2>A community for scientists and institute hosts</h2>
+	<img src="{{static_url("images/sciencehostel.png")}}">
 	<div id="above-fold"> 				
-		<strong>A community for scientists <span class="amp">&amp;</span> institute hosts</strong>
-
 		<div>
 			<h4>What is ScienceHostel?</h4>
 			<p>The physical requirements for conducting scholarly research have changed dramatically 
@@ -33,5 +35,5 @@
 		</div>
 	</div>
 </section>
-{% end %}
 
+{% end %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<header>
+	<div class="header">
+		<h1><a href="/">ScienceHostel</a></h1>			
+		<a id="login" href="/login">Login</a>
+		<ul id="nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/institutes">Institutes</a></li>
+			<li><a href="/scientists">Scientists</a></li>
+			<li><a href="/faq">FAQ</a></li>
+		</ul>
+		
+		<div class="hide">.</div>
+	</div>
+</header>
+		
+<section>
+	<h3>Add Institute Requests</h3>
+	
+	<ul class="wrapper">
+  {% for request in requests %}
+
+		<li>
+      <h5>{{request.institute_host_name}}</h5>
+      <h5>{{request.institute_host_email}}</h5>
+			<h5>{{request.institute_name}}</h5>
+			<div>
+				located in <em>{{request.institute_addr}}</em>
+				<p>{{request.institute_desc}}</p>
+			</div>
+      <button id="request_approve_{{request.id}}" onclick="approve_add_institute('{{request.id}}', true);" >Approve Request</button>
+      <button id="request_deny_{{request.id}}" onclick="approve_add_institute('{{request.id}}', false);" >Deny Request</button>
+
+		</li>
+		<div class="hide clear">.</div>
+
+	{% end %}	
+
+	</ul><!--end of list-wrapper div-->
+	<div class="hide">.</div>
+</section>
+
+{% end %}

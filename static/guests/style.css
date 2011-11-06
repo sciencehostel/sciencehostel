@@ -468,14 +468,6 @@ div.wrapper p { /*create institute form wrapper */
 	background-color: #a4d8fc;
 }
 
-#addInstitutesInProgress img {
-  width: 2.6em;
-  height: 2.6em;
-  margin: 0px 0px 20px 30px;
-  margin-left: 200px;
-  float: left;
-}
-
 #joining input[type="submit"] {
 	width: 18em;
 	margin-bottom: 0px;
@@ -495,5 +487,3 @@ div.wrapper p { /*create institute form wrapper */
 input[type="submit"] {
 	border-radius: 10px;
 }
-
-

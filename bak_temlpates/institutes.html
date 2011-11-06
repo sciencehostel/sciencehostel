@@ -12,6 +12,8 @@
 			<li><a href="/scientists">Scientists</a></li>
 			<li><a href="/faq">FAQ</a></li>
 		</ul>
+		
+		<div class="hide">.</div>
 	</div>
 </header>
 		
@@ -19,22 +21,23 @@
 	<h3>Institutes</h3>
 	<a class="action-links" href="/addInstitutes">Want to create your own institute?</a>
 	
-	<ul class="institutes-wrapper">
+	<ul class="wrapper">
   {% for institute in institutes %}
 
 		<li>
-			<img src="{{static_url("images/dummy.jpg")}}"></img>
 			<h5>{{institute.name}}</h5>
+			<img src="{{static_url("images/dummy.jpg")}}">
 			<div>
 				located in <em>place1</em>
 				<p>{{institute.longdescription}}</p>
 			</div>
 		</li>
+		<div class="hide clear">.</div>
 
-  {% end %}
-		
+	{% end %}	
+
 	</ul><!--end of list-wrapper div-->
+	<div class="hide">.</div>
 </section>
 
 {% end %}
-

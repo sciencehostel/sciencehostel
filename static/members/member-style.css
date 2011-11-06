@@ -1,0 +1,382 @@
+/*
+SciencheHostel 
+Style for member pages
+Author: Prajakta Godbole
+Date: 21 June 2011
+*/
+
+/*****************************************************
+		Reset styles 
+******************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+/*
+	vertical-align: baseline;
+*/
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************************************
+		Layout
+*******************************************************/
+html, footer {
+	width: 100%;
+	font-size: 100%;
+}
+
+body {
+	width:100%;	
+	font-family:  'Helvetica Neue', 'Myriad Pro', 'sans serif';
+	line-height: 1.5em;	
+	color: #450200;
+}
+
+.header, section, .footer {
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px 20px;
+}
+
+header {
+	overflow: hidden;
+	padding-bottom: 10px;
+}
+
+a {
+	text-decoration:none;	
+}
+
+footer {
+	clear: both;
+	height: 40px;
+}
+
+span.copyright {
+	float: right;
+	font-size: 0.7em;
+}
+
+/******************************************************
+		Navigation
+*******************************************************/
+h1 {
+	float:left;
+}
+
+#nav {
+	float:right;
+	font-size: 0.9em;
+}
+
+#nav li {
+	display:inline;
+	list-style-type:none;
+	margin:0 15px;
+	padding:0 10px;
+	font-family: "Voltaire";
+}
+
+#member-nav-links {
+	float:right;
+	padding-left:100px;
+	font-size: 0.75em;
+}
+
+/******************************************************
+		Headers and font sizes
+*******************************************************/
+h1 {
+	font-size: 1.6em;
+	font-family: "Voltaire";
+}
+
+h2 {
+	font-size: 2em;	
+	font-family: "Voltaire";
+}
+
+h3 {
+	font-size: 1.4em;
+	margin-top: 20px;
+	font-family: "Voltaire";
+}
+
+h4 {
+	font-size: 1.2em;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+ul.wrapper li {
+	font-size: 0.9em;
+}
+h5 {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+/******************************************************
+		Colors
+*******************************************************/
+html {
+	background-color: white;
+}
+
+/* White text */ 
+.current, h3 {
+	color: black;
+}
+
+header, #faq-index {
+	background-color: rgba(164,216,254, 0.4);
+}
+
+a {
+	color: #3585BC;
+}	
+
+#nav a {
+	color: #666;
+}
+
+.wrapper {
+	background-color: #fff;
+	opacity: 0.8;
+}
+
+body > section {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.wrapper {
+	padding-top: 0;
+	margin-top: 0;	
+}
+
+/* member page nav username display */
+#member-nav-links span {
+	color: #3585BC;
+}
+
+#secondary-nav {
+	color: black;
+	font-size: 0.75em;
+}
+
+ul#sec-nav-links li a{
+	color: #3585BC;
+}
+
+ul#sec-nav-links li {
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+
+#dashboard-content {
+	color: #333;
+	border-left: 1px dotted #ccc;
+	font-size: 0.8em;
+}
+
+.current-visits, .upcoming-visits {
+	background-color: rgba(164,216,254, 0.3);
+}
+
+.upcoming-visits p, .pending-visits p, .denied-visits p, .past-visits p{
+	background-color: #E6F6FF;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+/******************************************************
+		Main page - track visits
+*******************************************************/
+
+#member-nav-links span, #member-nav-links a {
+	margin:0 7px;
+}
+
+.wrapper {
+	margin: 20px 0;
+	border-radius: 10px;
+}
+
+#secondary-nav {
+	float: left;
+	width: 200px;
+	padding: 10px 20px;
+	padding-left: 0;
+	border-radius: 10px;
+}
+
+div#secondary-nav button{
+	font-size: 1.1em;
+	padding: 7px;
+	margin: 6px 0;
+	border-radius: 7px;
+	width: 200px;
+	background-color:#d1ebfe;
+	color: #000;
+	border-style: none;
+}
+
+div#secondary-nav button:hover, .scheduled-list li button:hover{
+	background-color:#a4d8fc;	
+}
+
+ul#sec-nav-links li {
+	font-size: 1.1em;
+	margin: 10px 0;
+}
+
+#dashboard-content {
+	margin-left: 230px; /* width of the side panel + some margin */
+	padding: 20px;
+	overflow: hidden;
+}
+
+.scheduled-visits {
+	border-radius: 7px;
+	padding: 10px;
+	margin: 5px 0;
+}
+
+.scheduled-visits-nopost {
+	padding: 10px;
+	margin: 5px 0;	
+}
+
+.scheduled-dates {
+	float: left;
+}
+
+.scheduled-details {
+	margin-left: 120px;
+	width: 60%;
+}
+
+.scheduled-list li button {
+	float: right;
+	margin-top: 10px;
+	margin-left: 10px;
+	border-style: none;
+	background-color:#d1ebfe;
+	padding: 2px;
+	border-radius: 5px;
+}
+
+.scheduled-list li {
+	border-bottom: 1px dotted #ccc;
+}
+
+.current-list li:last {
+	border-bottom: none;
+}
+
+/******************************************************
+		Edit profile page
+*******************************************************/
+
+#profile-details {
+	width: 540px;
+	margin-top: 20px;
+}
+
+#profile-details p{
+	margin: 7px 0;
+}
+
+#profile-pics {
+	float: right;
+	width: 120px;	
+}
+
+#profile-pics img{
+	width: 100%;	
+}
+
+img.thumbnail-img {
+	width: 30px;
+	height: 30px;
+}
+
+.field-info {
+	font-size: 0.9em;
+}
+
+/******************************************************
+		Individual institute page
+*******************************************************/
+.width-30 {
+	float: right;
+	width: 30%;
+	padding: 0 30px;
+}
+
+.width-60 {
+	width: 60%;
+	padding: 0 30px;
+}
+
+.width-60 p{
+	width: 360px;
+}
+
+#individual-institute-pics {
+	float: right;
+}
+
+.main-img {
+	width: 200px;
+}
+

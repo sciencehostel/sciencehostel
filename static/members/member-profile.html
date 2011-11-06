@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Edit profile | ScienceHostel - a community for scientists and institute hosts</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="member-style.css">
+		<link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header>
+			<div class="header">
+				<h1><a href="member-home.html">ScienceHostel</a></h1>	
+				<div id="member-nav-links">
+					<span>user1</span> <!--username goes here -->
+					<a href="settings.html">Settings</a>
+					<a id="logout" href="logout.html">Logout</a>
+				</div>
+				<ul id="nav">
+					<li class="current">Home</li>
+					<li><a href="m-institutes.html">Institutes</a></li>
+					<li><a href="m-scientists.html">Scientists</a></li>
+					<li><a href="m-faq.html">FAQ</a></li>
+				</ul>
+			</div>
+		</header>
+		
+		<section>
+			<div class="wrapper">
+				<div id="secondary-nav">
+					<button>Plan a visit</button>
+					<button>Want to create an institute?</button>
+					<ul id="sec-nav-links">
+						<li><a href="member-home.html">Track visits</a></li>
+						<li class="current">Edit profile</li>
+					</ul>
+				</div><!--end of secondary-nav div-->	
+				
+				<div id="dashboard-content">
+					<h2>Profile</h2>
+					
+					<div id="profile-pics">
+						<img src="dummy.jpg"><span class="field-info">(public profile picture)</span>
+						<!-- implement edit photo overlay with crop, upload, etc -->
+						<!-- edit album brings up overlay to add/ delete/ organize pics/ add caption, etc -->
+						<!-- album images shown as tiny thumbnails -->
+						<div class="album profile-album">
+							<h6>Album</h6>
+							<img class="thumbnail-img" src="">
+							<img class="thumbnail-img" src="">
+							<img class="thumbnail-img" src="">
+						</div>
+					</div>
+					
+					<div id="profile-details">
+						<p><span class="profile-title">Name: </span>name1</p>
+						<p><span class="profile-title">Brief bio: </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. </p>
+						<p><span class="profile-title">Website link: </span>web1</p>
+						<p><span class="profile-title">Email: </span>email1</p>
+						<p><span class="profile-title">Bio: </span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa. Integer ut purus ac augue commodo commodo. Nunc nec mi eu justo tempor consectetuer. Etiam vitae nisl. In dignissim lacus ut ante</p>
+						<!-- implement in-place edits -->
+					</div>
+				</div><!-- end of dashboard-content div -->	
+				
+			</div>
+		</section>
+		
+		<footer>
+			<div class="footer">
+				<span class="copyright">&#169;ScienceHostel</span>
+			</div>
+		</footer>	
+	</body>
+</html>
