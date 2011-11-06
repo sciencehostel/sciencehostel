@@ -63,24 +63,27 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class AuthLoginHandler(BaseHandler):
     def get(self):
-        self.render("login.html", login_msg=None, current_header='header_login', options=options)
+        self.render("guests/login.html", login_msg=None, current_header='header_login', options=options)
 
     def post(self):
         login_msg = None
-        if self.get_argument("username",None) is None or self.get_argument("password",None) is None:
-          self.render("login.html", login_msg="missing username or password")
+        if self.get_argument("email",None) is None or self.get_argument("password",None) is None:
+          logging.info('missing email/password')
+          self.render("guests/login.html", login_msg="missing email or password", options=options)
           return
         # verify password
-        user = self.db.get("SELECT * from zuser where username = %s", self.get_argument("username"))
+        user = self.db.get("SELECT * from zuser where email = %s", self.get_argument("email"))
         if user is None:
-          self.render("login.html", login_msg="unknown user")
+          logging.info('incorrect email')
+          self.render("guests/login.html", login_msg="unknown user", options=options)
           return
 
         if user.password != self.get_argument("password"):
-          self.render("login.html", login_msg="incorrect password", current_header='header_login')
+          logging.info('incorrect password')
+          self.render("guests/login.html", login_msg="incorrect password", current_header='header_login', options=options)
           return
 
-        self.set_secure_cookie("user", tornado.escape.json_encode(user))
+        self.set_secure_cookie("user", str(user.id))
         self.set_cookie("utype", "science")
         self.redirect(self.get_argument("next", "/"))
 
@@ -89,16 +92,16 @@ class RegisterHandler(BaseHandler):
         register_msg = None
         print self.request
         if self.get_argument("username",None) is None or self.get_argument("password1",None) is None or self.get_argument("password2",None) is None:
-          self.render("register.html", register_msg="missing arguments", current_header="header_register")
+          self.render("register.html", register_msg="missing arguments", current_header="header_register", options=options)
           return
         if self.get_argument("password1") != self.get_argument("password2"):
-          self.render("register.html", register_msg="passowrds dont match", current_header="header_register")
+          self.render("register.html", register_msg="passowrds dont match", current_header="header_register", options=options)
           return
 
         # create new user
         user = self.db.get("SELECT * from zuser where username = %s", self.get_argument("username"))
         if user is not None:
-          self.render("register.html", register_msg="user exists", curent_header="header_register")
+          self.render("register.html", register_msg="user exists", curent_header="header_register", options=options)
           return
         self.db.execute("INSERT INTO zuser (username, password, name, email ) VALUES(%s,%s,%s,%s)", self.get_argument("username"), self.get_argument("password1"), self.get_argument("name",None), self.get_argument("email",None))
         user = self.db.get("SELECT * from zuser where username = %s", self.get_argument("username"))
@@ -107,7 +110,7 @@ class RegisterHandler(BaseHandler):
         self.redirect(self.get_argument("next", "/"))
 
     def get(self):
-        self.render("register.html", register_msg=None, current_header="header_register")
+        self.render("register.html", register_msg=None, current_header="header_register", options=options)
 
 class AuthLogoutHandler(BaseHandler):
     def get(self):

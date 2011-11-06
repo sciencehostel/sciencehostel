@@ -21,18 +21,18 @@
 	<img src="{{static_url("images/scientist1.png")}}">
 	<h1><a href="/">ScienceHostel</a></h1>						
 	<div id="login-wrapper">
-		<form id="login-form" method="post" action="">
-			<label id="login-email">Email</label>
-			<input type="text" for="login-email">
-			
-			<label id="password">Password
-			<a href="/forgotpwd"><em>Forgot password</em></a>
-			</label>
-			<input type="text" for="password">
-			
-			<input type="submit" value="Login">
+		<form id="login-form" method="post" action="/login?">
+    <p><label for="id_email">Email:</label> <input id="id_email" type="text" name="email" maxlength="30" /> </p>
+    <p><label for="id_password">Password:</label> <input type="password" name="password" id="id_password" /></p>
+    <input type="submit" value="Login">
 		</form>				
   <fb:login-button autologoutlink="true"></fb:login-button>
+
+  {% if login_msg %}
+  <p>
+  {{login_msg }}
+  </p>
+  {% end %}
 
 	</div><!--end of login-wrapper div-->
 </section>

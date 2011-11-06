@@ -64,23 +64,23 @@ class BaseHandler(tornado.web.RequestHandler):
 class MainHandler(BaseHandler):
 
   def get(self):
-    self.render('index.html', options=options)
+    self.render('guests/index.html', options=options)
 
 class LoginHandler(BaseHandler):
 
   def get(self):
-    self.render('login.html', options=options)
+    self.render('guests/login.html', options=options)
 
 class InstitutesHandler(BaseHandler):
 
   def get(self):
     institutes = self.db.query('SELECT * from institute')
-    self.render('institutes.html', institutes=institutes, options=options)
+    self.render('guests/institutes.html', institutes=institutes, options=options)
 
 class AddInstitutesHandler(BaseHandler):
 
   def get(self):
-    self.render('addInstitutes.html', options=options)
+    self.render('guests/addInstitutes.html', options=options)
 
   def post(self):
     logging.info(self.request)
@@ -149,22 +149,22 @@ class ScientistsHandler(BaseHandler):
 
   def get(self):
     scientists = self.db.query('SELECT * from scientist')
-    self.render('scientists.html', scientists=scientists, options=options)
+    self.render('guests/scientists.html', scientists=scientists, options=options)
 
 class JoiningHandler(BaseHandler):
 
   def get(self):
-    self.render('joining.html', options=options)
+    self.render('guests/joining.html', options=options)
 
 class FaqHandler(BaseHandler):
 
   def get(self):
-    self.render('faq.html', options=options)
+    self.render('guests/faq.html', options=options)
 
 class ForgotPwdHandler(BaseHandler):
 
   def get(self):
-    self.render('forgotpwd.html', options=options)
+    self.render('guests/forgotpwd.html', options=options)
 
 def main():
     tornado.options.parse_command_line()
