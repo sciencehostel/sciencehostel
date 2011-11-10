@@ -63,29 +63,35 @@ class BaseHandler(tornado.web.RequestHandler):
 
 class AuthLoginHandler(BaseHandler):
     def get(self):
-        self.render("guests/login.html", login_msg=None, current_header='header_login', options=options)
+        self.render("login.html", login_msg=None, current_header='header_login', options=options)
 
     def post(self):
         login_msg = None
         if self.get_argument("email",None) is None or self.get_argument("password",None) is None:
           logging.info('missing email/password')
-          self.render("guests/login.html", login_msg="missing email or password", options=options)
+          self.render("login.html", login_msg="missing email or password", options=options)
           return
         # verify password
         user = self.db.get("SELECT * from zuser where email = %s", self.get_argument("email"))
         if user is None:
           logging.info('incorrect email')
-          self.render("guests/login.html", login_msg="unknown user", options=options)
+          self.render("login.html", login_msg="unknown user", options=options)
           return
 
         if user.password != self.get_argument("password"):
           logging.info('incorrect password')
-          self.render("guests/login.html", login_msg="incorrect password", current_header='header_login', options=options)
+          self.render("login.html", login_msg="incorrect password", current_header='header_login', options=options)
           return
 
         self.set_secure_cookie("user", str(user.id))
         self.set_cookie("utype", "science")
         self.redirect(self.get_argument("next", "/"))
+
+class AuthLogoutHandler(BaseHandler):
+  def get(self):
+    self.clear_cookie("utype")
+    self.clear_cookie("user")
+    self.redirect(self.get_argument("next", "/"))
 
 class RegisterHandler(BaseHandler):
     def post(self):

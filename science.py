@@ -34,6 +34,7 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/", MainHandler),
             (r"/login", AuthLoginHandler),
+            (r"/logout", AuthLogoutHandler),
             (r"/institutes", InstitutesHandler),
             (r"/scientists", ScientistsHandler),
             (r"/addInstitutes", AddInstitutesHandler),
@@ -56,31 +57,31 @@ class Application(tornado.web.Application):
             host=options.mysql_host, database=options.mysql_database,
             user=options.mysql_user, password=options.mysql_password)
 
-class BaseHandler(tornado.web.RequestHandler):
-    @property
-    def db(self):
-        return self.application.db
-
 class MainHandler(BaseHandler):
 
   def get(self):
-    self.render('guests/index.html', options=options)
+    user = self.current_user
+    logging.info(user)
+    if user == None:
+      self.render('index.html', options=options)
+    else:
+      self.render('member-home.html', user=user, options=options)
 
 class LoginHandler(BaseHandler):
 
   def get(self):
-    self.render('guests/login.html', options=options)
+    self.render('login.html', options=options)
 
 class InstitutesHandler(BaseHandler):
 
   def get(self):
     institutes = self.db.query('SELECT * from institute')
-    self.render('guests/institutes.html', institutes=institutes, options=options)
+    self.render('institutes.html', institutes=institutes, options=options)
 
 class AddInstitutesHandler(BaseHandler):
 
   def get(self):
-    self.render('guests/addInstitutes.html', options=options)
+    self.render('addInstitutes.html', options=options)
 
   def post(self):
     logging.info(self.request)
@@ -149,22 +150,22 @@ class ScientistsHandler(BaseHandler):
 
   def get(self):
     scientists = self.db.query('SELECT * from scientist')
-    self.render('guests/scientists.html', scientists=scientists, options=options)
+    self.render('scientists.html', scientists=scientists, options=options)
 
 class JoiningHandler(BaseHandler):
 
   def get(self):
-    self.render('guests/joining.html', options=options)
+    self.render('joining.html', options=options)
 
 class FaqHandler(BaseHandler):
 
   def get(self):
-    self.render('guests/faq.html', options=options)
+    self.render('faq.html', options=options)
 
 class ForgotPwdHandler(BaseHandler):
 
   def get(self):
-    self.render('guests/forgotpwd.html', options=options)
+    self.render('forgotpwd.html', options=options)
 
 def main():
     tornado.options.parse_command_line()
